@@ -1,5 +1,6 @@
 package and5.abrar.navigationcomponent_ch3
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,10 +21,13 @@ class ThirdFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_third, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val nama = arguments?.getString("nama")
         val efek = arguments?.getString("efek")
         val umur = arguments?.getInt("hitung")
+        getnama.text = ("umur")+nama.toString()
         getumur.text = umur.toString()
         getgnj.text = efek.toString()
         gotoback2.setOnClickListener {

@@ -8,6 +8,12 @@
     tools:context=".ThirdFragment">
 
     <TextView
+        android:textSize="30sp"
+        android:id="@+id/getnama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
         android:id="@+id/getumur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -21,7 +27,8 @@
         android:id="@+id/gotoback2"
         android:text="kembali ke dua"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
 
 
 </LinearLayout>

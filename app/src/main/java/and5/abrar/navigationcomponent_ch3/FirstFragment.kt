@@ -1,5 +1,6 @@
 package and5.abrar.navigationcomponent_ch3
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ class FirstFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_first, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -28,7 +30,7 @@ class FirstFragment : Fragment() {
             val nama = user.text.toString()
             val password = pass.text.toString()
             val bundle = bundleOf("nama" to nama, "pass" to password)
-            if (nama!="abrar"&&password!="abrar"){
+            if (nama!="abrar"&&password!="1234"){
                 situasi.text = "gagal"
             }else{
                 Navigation.findNavController(view).navigate(R.id.navigasike_fragmentdua,bundle)

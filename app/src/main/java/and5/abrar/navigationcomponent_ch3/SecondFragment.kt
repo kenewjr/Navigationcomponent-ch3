@@ -1,5 +1,6 @@
 package and5.abrar.navigationcomponent_ch3
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,9 +22,10 @@ class SecondFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getnama.text = arguments?.getString("nama")
+        getnama.text = ("Hello,")+arguments?.getString("nama")
         goto3.setOnClickListener {
             val tahunsekarang = thnsekarang.text.toString().toInt()
             val tahunlahir = thnlahir.text.toString().toInt()
@@ -34,7 +36,7 @@ class SecondFragment : Fragment() {
             }else{
                 efek = "ganjil"
             }
-            val bundle = bundleOf("hitung" to hitung, "efek" to efek)
+            val bundle = bundleOf("hitung" to hitung, "efek" to efek,"nama" to arguments?.getString("nama"))
             Navigation.findNavController(view).navigate(R.id.navigasike_fragmenttigas,bundle)
         }
     }
